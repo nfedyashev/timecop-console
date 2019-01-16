@@ -1,6 +1,6 @@
 module TimecopConsole
   class MainController < ::ApplicationController
-    skip_filter :handle_timecop_offset
+    skip_around_action :handle_timecop_offset
 
     def update
       if date_select_format?
@@ -21,12 +21,20 @@ module TimecopConsole
       end
 
       session[SESSION_KEY_NAME] = Time.zone.local(year, month, day, hour, minute, second)
-      redirect_to :back
+
+      #because
+      #root_path
+      #ActionController::UrlGenerationError: No route matches {:action=>"root", :controller=>"home"}
+      redirect_back fallback_location: '/'
     end
 
     def reset
       session[SESSION_KEY_NAME] = nil
-      redirect_to :back
+
+      #because
+      #root_path
+      #ActionController::UrlGenerationError: No route matches {:action=>"root", :controller=>"home"}
+      redirect_back fallback_location: '/'
     end
 
     private
