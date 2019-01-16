@@ -1,6 +1,6 @@
 = timecop-console
 
-* http://github.com/jtrupiano/timecop-console
+* http://github.com/nfedyashev/timecop-console
 
 == Description
 
@@ -16,7 +16,7 @@ truly give you a powerful QA tool.
 Add to your `Gemfile`:
 
   group :development, :staging do
-    gem 'timecop-console', '~> 0.2', :require => 'timecop_console'
+    gem 'timecop-console', '~> 0.2', github: 'nfedyashev/timecop-console', :require => 'timecop_console'
   end
 
 Protip: avoid having `timecop-console` gem as part of `test` group if you use Timecop in your tests to avoid any hard-to-debug exceptions.
