@@ -3,11 +3,11 @@ module TimecopConsole
   module ControllerMethods
     def self.included(base)
       base.class_eval do
-        around_filter :handle_timecop_offset
+        around_action :handle_timecop_offset
       end
     end
 
-    # to be used as an around_filter
+    # to be used as an around_action
     def handle_timecop_offset
       # Establish now
       if session[TimecopConsole::SESSION_KEY_NAME].present?

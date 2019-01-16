@@ -2,7 +2,7 @@
 require File.expand_path('../lib/timecop_console/version', __FILE__)
 
 Gem::Specification.new do |spec|
-  spec.add_dependency "railties", '>= 3.1', '< 5.0'
+  spec.add_dependency "railties", '>= 3.1', '< 6.0'
   spec.add_dependency 'timecop', '>= 0.5'
   spec.authors = ["John Trupiano"]
   spec.description = %q{TimecopConsole manipulates Time.now using Timecop gem.}
